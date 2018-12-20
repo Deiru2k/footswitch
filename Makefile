@@ -1,6 +1,7 @@
 PREFIX = /usr/local
-INSTALL = /usr/bin/install -c
-INSTALLDATA = /usr/bin/install -c -m 644
+INSTALLCMD=/bin/env -i install
+INSTALL=$(INSTALLCMD) -c
+INSTALLDATA = $(INSTALLCMD) -c -m 644
 CFLAGS = -Wall
 UNAME := $(shell uname)
 ifeq ($(UNAME), Darwin)
